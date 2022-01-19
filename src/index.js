@@ -7,6 +7,20 @@ import NoteList from "./components/NoteList";
 import NoteForm from "./components/NoteForm";
 import noteReducer from "./reducers/notes";
 import NotesContext from "./context/NotesContext";
+import {Button, FormHelperText, Input, InputLabel} from "@mui/material";
+import { FormControl } from "@mui/material";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import Dashboard from "./components/dashboard/Dashboard";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link, BrowserRouter, Routes
+} from "react-router-dom";
+import Home from "./components/Home";
+import Shop from "./components/Shop";
+import ItemCard from "./components/ItemCard";
 
 function TextInputWithFocusButton() {
   const inputEl = useRef(null);
@@ -39,10 +53,28 @@ function App() {
 
   return (
     <NotesContext.Provider value={{ notes, dispatch }}>
-      <TextInputWithFocusButton />
-      <HeadLine />
-      <NoteList />
-      <NoteForm />
+      {/*<BrowserRouter>*/}
+      {/*  <HeadLine/>*/}
+      {/*  <Routes>*/}
+      {/*    <Route path="/" element={<Home />} />*/}
+      {/*    <Route path="/shop" element={<Shop />} />*/}
+      {/*    <Route path="/shop/:id" element={<ItemCard />} />*/}
+      {/*  </Routes>*/}
+      {/*</BrowserRouter>*/}
+      <Dashboard/>
+        {/*<SignUp/>*/}
+        {/*<SignIn/>*/}
+        {/*<FormControl>*/}
+        {/*    <InputLabel htmlFor="my-input">Email address</InputLabel>*/}
+        {/*    <Input id="my-input" aria-describedby="my-helper-text" />*/}
+        {/*    /!* eslint-disable-next-line react/no-unescaped-entities *!/*/}
+        {/*    <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>*/}
+        {/*</FormControl>*/}
+        {/*<Button variant="contained">Contained</Button>*/}
+        {/*<TextInputWithFocusButton />*/}
+      {/*<HeadLine />*/}
+      {/*<NoteList />*/}
+      {/*<NoteForm />*/}
     </NotesContext.Provider>
   );
 }
